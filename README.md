@@ -37,7 +37,7 @@ Open any Windows PowerShell 5.1 _(or later) host console **(Except Windows Termi
 
 ```Powershell
 $GitHubRepositoryAuthor = "Brahmatruti"; `
-$GitHubRepositoryName = "Dotfiles-for-Windows-11"; `
+$GitHubRepositoryName = "windowsdotfiles"; `
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; `
 Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${GitHubRepositoryAuthor}/${GitHubRepositoryName}/main/Download.ps1");
 ```
