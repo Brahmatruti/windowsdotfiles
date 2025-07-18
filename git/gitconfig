@@ -1,0 +1,28 @@
+[diff "astextplain"]
+	textconv = astextplain
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[http]
+	sslBackend = schannel
+[core]
+	fileMode = true
+	fsmonitor = true
+	autocrlf = true
+	hidedotfiles = false
+	protectntfs = true
+	safecrlf = warn
+	fscache = true
+	symlinks = true
+	useBuiltinFSMonitor = true
+	editor = code --wait
+[pull]
+	rebase = false
+[credential]
+	helper = manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[init]
+	defaultBranch = main
