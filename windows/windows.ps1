@@ -423,6 +423,7 @@ winget install Amazon.AWSCLI                              --silent --accept-pack
 # winget install Microsoft.Azure.StorageExplorer            --silent --accept-package-agreements --accept-source-agreements
 # #winget install Microsoft.Azure.StorageEmulator            --silent --accept-package-agreements --accept-source-agreements
 # #winget install Microsoft.ServiceFabricRuntime            --silent --accept-package-agreements --accept-source-agreements
+winget install GitHub.GitHubDesktop                        --silent --accept-package-agreements --accept-source-agreements
 winget install pCloudAG.pCloudDrive                        --silent --accept-package-agreements --accept-source-agreements
 winget install Google.Drive                               --silent --accept-package-agreements --accept-source-agreements
 winget install Mega.MEGASync                        --silent --accept-package-agreements --accept-source-agreements
