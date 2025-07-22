@@ -7,7 +7,7 @@ Clear-Host;
 ################################################################################
 #                                  Oh my Posh!                                 #
 ################################################################################
-
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass;
 Import-Module "oh-my-posh";
 Import-Module "posh-git";
 Import-Module "Terminal-Icons";
