@@ -181,6 +181,6 @@ Remove-Desktop-Shortcuts;
 Write-Host "The Setup has finished." -ForegroundColor "Yellow";
 
 Write-Host "Restarting the PC in 10 seconds..." -ForegroundColor "Green";
-Start-Sleep -Seconds 10;
-Restart-Computer;
+# Start-Sleep -Seconds 10;
+Restart-Computer -Confirm;
 
