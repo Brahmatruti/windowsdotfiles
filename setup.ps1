@@ -134,9 +134,6 @@ Invoke-Expression -Command "$PSScriptRoot\git\gitsetup.ps1"
 # Git2
 # Invoke-Expression -Command "$PSScriptRoot\git2\Git.ps1"
 
-# Powershell
-Invoke-Expression -Command "$PSScriptRoot\powershell\powershell.ps1"
-
 # PowerToys
 Invoke-Expression -Command "$PSScriptRoot\powertoys\powertoys.ps1"
 
@@ -168,6 +165,8 @@ Invoke-Expression -Command "$PSScriptRoot\Dotnet\Dotnet.ps1"
 # Docker
 Invoke-Expression -Command "$PSScriptRoot\Docker\Docker.ps1"
 
+# Powershell
+Invoke-Expression -Command "$PSScriptRoot\powershell\powershell.ps1"
 
 # AI Tools
 Invoke-Expression -Command "$PSScriptRoot\ai-tools\ai-tool.ps1"
