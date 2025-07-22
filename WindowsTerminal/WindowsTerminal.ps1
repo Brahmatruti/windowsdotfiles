@@ -15,10 +15,10 @@ function Set-PowerShell-Profile {
     Write-Host "Creating empty PowerShell profile:" -ForegroundColor "Green";
     New-Item -Path $Profile -ItemType "file" -Force;
   }
-  
+
   Write-Host "Coping PowerShell profile:" -ForegroundColor "Green";
   Copy-Item $DotfilesWindowsTerminalProfilePath -Destination $Profile;
-  
+
   Write-Host "Activating PowerShell profile:" -ForegroundColor "Green";
   . $Profile;
 
@@ -28,16 +28,16 @@ function Set-PowerShell-Profile {
 function Set-WindowsTerminal-Settings {
   $WindowsTerminalSettingsFilePath = Join-Path -Path $env:LOCALAPPDATA -ChildPath "Packages" | Join-Path -ChildPath "Microsoft.WindowsTerminal_8wekyb3d8bbwe" | Join-Path -ChildPath "LocalState" | Join-Path -ChildPath "settings.json";
   $DotfilesWindowsTerminalSettingsPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WindowsTerminal" | Join-Path -ChildPath "settings.json";
-  $WorkspaceFolder = Join-Path -Path $Config.WorkspaceDisk -ChildPath "Workspace";
+  $WorkspaceFolder = Join-Path -Path $Config.WorkspaceDisk -ChildPath "DLWorkspace";
 
   Write-Host "Copying Windows Terminal settings:" -ForegroundColor "Green";
   Copy-Item $DotfilesWindowsTerminalSettingsPath -Destination $WindowsTerminalSettingsFilePath;
 
   Write-Host "Configuring Windows Terminal starting directory:" -ForegroundColor "Green";
-  
+
   (Get-Content -path $WindowsTerminalSettingsFilePath) -replace "__STARTING_WINDOWS_DIRECTORY__", ($WorkspaceFolder | ConvertTo-Json) | Set-Content -Path $WindowsTerminalSettingsFilePath;
 
-  $UbuntuStartingDirectory = wsl wslpath -w "~/Workspace";
+  $UbuntuStartingDirectory = wsl wslpath -w "~/DLWorkspace";
   (Get-Content -path $WindowsTerminalSettingsFilePath) -replace "__STARTING_UBUNTU_DIRECTORY__", ($UbuntuStartingDirectory | ConvertTo-Json) | Set-Content -Path $WindowsTerminalSettingsFilePath;
 
   Write-Host "Windows Terminal was successfully configured." -ForegroundColor "Green";
