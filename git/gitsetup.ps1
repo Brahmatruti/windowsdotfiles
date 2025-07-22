@@ -16,7 +16,7 @@ Set-Softlink -Path "$HOME\.config\git\config" -Target "$PSScriptRoot\config"
 Set-Softlink -Path "$env:programfiles\git\etc\gitconfig" -Target "$PSScriptRoot\gitconfig"
 
 # Create softlink to '.gitignore'.
-Set-Softlink -Path "$HOME\.config\git\.gitignore" -Target "$PSScriptRoot\.gitignore"
+Set-Softlink -Path "$HOME\.config\git\.gitignore" -Target "$PSScriptRoot\gitignore"
 
 # Create softlink to '.gitattributes'.
 Set-Softlink -Path "$HOME\.config\git\.gitattributes" -Target "$PSScriptRoot\.gitattributes"

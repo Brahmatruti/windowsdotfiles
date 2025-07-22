@@ -22,7 +22,7 @@ Write-Host "DotfilesConfigFile:" $DotfilesConfigFile;
 Write-Host "Loading helpers:" -ForegroundColor "Green";
 $DotfilesHelpers = Get-ChildItem -Path "${DotfilesHelpersFolder}\*" -Include *.ps1 -Recurse;
 foreach ($DotfilesHelper in $DotfilesHelpers) {
-  . $DotfilesHelper;
+    . $DotfilesHelper;
 };
 
 if (($PSVersionTable.PSVersion.Major) -lt 5) {
@@ -99,19 +99,19 @@ $Config = Get-Configuration-File -DotfilesConfigFile $DotfilesConfigFile;
 # Trust PSrepository
 
 if (-not (Get-PackageProvider-Installation-Status -PackageProviderName "NuGet")) {
-  Write-Host "Installing NuGet as package provider:" -ForegroundColor "Green";
-  Install-PackageProvider -Name "NuGet" -Force;
+    Write-Host "Installing NuGet as package provider:" -ForegroundColor "Green";
+    Install-PackageProvider -Name "NuGet" -Force;
 }
 
 if (-not (Get-PSRepository-Trusted-Status -PSRepositoryName "PSGallery")) {
-  Write-Host "Setting up PSGallery as PowerShell trusted repository:" -ForegroundColor "Green";
-  Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted;
+    Write-Host "Setting up PSGallery as PowerShell trusted repository:" -ForegroundColor "Green";
+    Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted;
 }
 
 if (-not (Get-Module-Installation-Status -ModuleName "PackageManagement" -ModuleMinimumVersion "1.4.6")) {
-  Write-Host "Updating PackageManagement module:" -ForegroundColor "Green";
-  [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
-  Install-Module -Name "PackageManagement" -Force -MinimumVersion "1.4.6" -Scope "CurrentUser" -AllowClobber -Repository "PSGallery";
+    Write-Host "Updating PackageManagement module:" -ForegroundColor "Green";
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
+    Install-Module -Name "PackageManagement" -Force -MinimumVersion "1.4.6" -Scope "CurrentUser" -AllowClobber -Repository "PSGallery";
 }
 
 
@@ -122,14 +122,10 @@ New-Directory -Path "$HOME\.config" -Hide
 # Windows config
 Invoke-Expression -Command "$PSScriptRoot\windows\windows.ps1"
 
-# Windows2
-# Invoke-Expression -Command "$PSScriptRoot\Windows2\Windows.ps1"
-
 # Chocolatey
 Invoke-Expression -Command "$PSScriptRoot\Chocolatey\Chocolatey.ps1"
 
 # Visual Studio Code VSCode
-# Invoke-Expression -Command "$PSScriptRoot\vscode\setup.ps1"
 Invoke-Expression -Command "$PSScriptRoot\VSCode\VSCode.ps1"
 
 # Git
@@ -139,13 +135,10 @@ Invoke-Expression -Command "$PSScriptRoot\git\gitsetup.ps1"
 # Invoke-Expression -Command "$PSScriptRoot\git2\Git.ps1"
 
 # Powershell
-# Invoke-Expression -Command "$PSScriptRoot\powershell\powershell.ps1"
+Invoke-Expression -Command "$PSScriptRoot\powershell\powershell.ps1"
 
 # PowerToys
 Invoke-Expression -Command "$PSScriptRoot\powertoys\powertoys.ps1"
-
-# # WSL old
-# Invoke-Expression -Command "$PSScriptRoot\wsl\setup.ps1"
 
 # WSL
 Invoke-Expression -Command "$PSScriptRoot\wsl2\WSL.ps1"
@@ -154,7 +147,7 @@ Invoke-Expression -Command "$PSScriptRoot\wsl2\WSL.ps1"
 Invoke-Expression -Command "$PSScriptRoot\WindowsTerminal\WindowsTerminal.ps1"
 
 # GPG
-# Invoke-Expression -Command "$PSScriptRoot\gpg\setup.ps1"
+Invoke-Expression -Command "$PSScriptRoot\gpg\setup.ps1"
 
 # WorkspaceFolder
 Invoke-Expression -Command "$PSScriptRoot\WorkspaceFolder\WorkspaceFolder.ps1"
@@ -174,6 +167,10 @@ Invoke-Expression -Command "$PSScriptRoot\Dotnet\Dotnet.ps1"
 
 # Docker
 Invoke-Expression -Command "$PSScriptRoot\Docker\Docker.ps1"
+
+
+# AI Tools
+Invoke-Expression -Command "$PSScriptRoot\ai-tools\ai-tool.ps1"
 
 Write-Host "Deleting Desktop shortcuts:" -ForegroundColor "Green";
 Remove-Desktop-Shortcuts;
