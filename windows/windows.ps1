@@ -429,5 +429,5 @@ winget install Mega.MEGASync                        --silent --accept-package-ag
 winget install QNAP.Qsync                        --silent --accept-package-agreements --accept-source-agreements
 winget install Mobatek.MobaXterm                        --silent --accept-package-agreements --accept-source-agreements
 
-Google.Drive
+
 Refresh-Environment
