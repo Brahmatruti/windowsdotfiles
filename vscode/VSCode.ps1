@@ -14,13 +14,13 @@ choco install -y "vscode" --params "/NoDesktopIcon /NoQuicklaunchIcon /NoContext
 Set-VSCode-Configuration;
 refreshenv;
 if (where.exe code) {
-Write-Host "Installing Visual Studio Code extensions:" -ForegroundColor "Yellow"
+  Write-Host "Installing Visual Studio Code extensions:" -ForegroundColor "Yellow"
 
-# ================================
-# PowerShell Script to Install VS Code Extensions by Groups
-# ================================
+  # ================================
+  # PowerShell Script to Install VS Code Extensions by Groups
+  # ================================
 
-$extensions = @(
+  $extensions = @(
     # === Core Language Support ===
     "ms-python.python",
     "ms-python.debugpy",
@@ -70,6 +70,7 @@ $extensions = @(
     "github.remotehub",
     "github.vscode-pull-request-github",     # new addition
     "ms-vscode.azure-repos",
+    "vscode.vscode-speech",
 
     # === UI, Themes, Icons ===
     "PKief.material-icon-theme",
@@ -101,20 +102,20 @@ $extensions = @(
     "rangav.vscode-thunder-client",
 
     # === AI Coding Assistants ===
-    "github.copilot",                   # Keeping only GitHub Copilot
+    "github.copilot",                  # Keeping only GitHub Copilot
     "saoudrizwan.claude-dev",          # Optional, if you use Claude for code
     # Uncomment if you prefer Codeium over Copilot
     # "codeium.codeium",
 
     # === Collaboration (Optional) ===
     "ms-vsliveshare.vsliveshare"
-)
+  )
 
-# Install all extensions
-foreach ($ext in $extensions) {
+  # Install all extensions
+  foreach ($ext in $extensions) {
     Write-Host "Installing Extension: $ext"
     code --install-extension $ext
-}
+  }
 
-Write-Host "Visual Studio Code extensions have been successfully installed.`n" -ForegroundColor "Green"
+  Write-Host "Visual Studio Code extensions have been successfully installed.`n" -ForegroundColor "Green"
 }
