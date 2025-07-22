@@ -165,11 +165,11 @@ Invoke-Expression -Command "$PSScriptRoot\Dotnet\Dotnet.ps1"
 # Docker
 Invoke-Expression -Command "$PSScriptRoot\Docker\Docker.ps1"
 
-# Powershell
-Invoke-Expression -Command "$PSScriptRoot\powershell\powershell.ps1"
-
 # AI Tools
 Invoke-Expression -Command "$PSScriptRoot\ai-tools\ai-tool.ps1"
+
+# Powershell
+Invoke-Expression -Command "$PSScriptRoot\powershell\powershell.ps1"
 
 Write-Host "Deleting Desktop shortcuts:" -ForegroundColor "Green";
 Remove-Desktop-Shortcuts;
