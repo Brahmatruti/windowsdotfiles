@@ -1,0 +1,1 @@
+This repository contains dotfiles and setup scripts for Microsoft Windows 11, providing a repeatable and resilient development environment configuration. It automates the setup of tools like Docker, WSL, and various development utilities, ensuring consistency across reboots and systems.
